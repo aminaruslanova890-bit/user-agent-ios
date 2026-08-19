@@ -1,11 +1,10 @@
 {
   "manifest_version": 3,
   "name": "Apple UA Spoofer",
-  "version": "1.0",
+  "version": "2.0",
   "description": "Подменяет User-Agent на iPhone для сайтов Apple, чтобы обходить ограничения только-для-устройств",
   "permissions": [
-    "declarativeNetRequest",
-    "declarativeNetRequestWithHostAccess"
+    "declarativeNetRequest"
   ],
   "host_permissions": [
     "*://*.apple.com/*"
@@ -19,6 +18,16 @@
       }
     ]
   },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.apple.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {

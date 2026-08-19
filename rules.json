@@ -9,12 +9,21 @@
           "header": "User-Agent",
           "operation": "set",
           "value": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1"
+        },
+        {
+          "header": "Accept",
+          "operation": "set",
+          "value": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
         }
       ]
     },
     "condition": {
-      "urlFilter": "*",
-      "domains": ["appleid.apple.com", "account.apple.com", "idmsa.apple.com", "gsa.apple.com"],
+      "requestDomains": [
+        "appleid.apple.com",
+        "account.apple.com",
+        "idmsa.apple.com",
+        "gsa.apple.com"
+      ],
       "resourceTypes": [
         "main_frame",
         "sub_frame",
